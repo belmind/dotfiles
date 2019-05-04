@@ -97,3 +97,4 @@ source $ZSH/oh-my-zsh.sh
 alias food='~/Documents/Github/chalmersfood/Foodpls'
 alias dnukec='docker rm$(docker ps -a -q)'
 alias dnukei='docker rmi$(docker images -q)'
+alias py3env='. venv/bin/activate'
