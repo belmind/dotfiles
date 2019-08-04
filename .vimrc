@@ -13,7 +13,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 " FZF
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-
+Plug 'https://github.com/rking/ag.vim'
+Plug 'valloric/python-indent'
 call plug#end()
 
 let plugin_paths = ['plugins/fzf']
@@ -113,10 +114,59 @@ set number
 execute pathogen#infect()
 call pathogen#helptags()
 
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+" indentation for js, html and css
+ au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2
+    \|set softtabstop=2
+    \|set shiftwidth=2
+ 
+" Pep 8 indentation
+au BufNewFile,BufRead *.py
+    \set tabstop=4
+    \|set softtabstop=4
+    \|set shiftwidth=4
+    \|set textwidth=79
+    \|set expandtab
+    \|set autoindent
+    \|set fileformat=unix
+
+
+" Flags extraneous whitespace
+" au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
 " CTRL + n Opens NERDTree
 nnoremap <C-n> :NERDTreeToggle<CR>
+
 " CTRL + p Searches for files
 nnoremap <C-p> :Files<CR>
+
+" \ for ctrl+shift+f in vscode
+nnoremap \ :Ag<SPACE>
+
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Enable folding with the spacebar
+nnoremap <space> za
+
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
