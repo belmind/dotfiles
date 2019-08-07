@@ -14,6 +14,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'https://github.com/rking/ag.vim'
+Plug 'flazz/vim-colorschemes'
 Plug 'valloric/python-indent'
 call plug#end()
 
@@ -149,7 +150,10 @@ au BufNewFile,BufRead *.py
 " CTRL + n Opens NERDTree
 nnoremap <C-n> :NERDTreeToggle<CR>
 
-" CTRL + p Searches for files
+" Shows hidden files in tree view
+let NERDTreeShowHidden=1
+
+" CTRL + p Searches for files, cmd+p in vscode
 nnoremap <C-p> :Files<CR>
 
 " \ for ctrl+shift+f in vscode
@@ -163,6 +167,9 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Colorscheme 
+:colorscheme space-vim-dark
 
 " Enable folding with the spacebar
 nnoremap <space> za
