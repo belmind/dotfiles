@@ -16,6 +16,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'https://github.com/rking/ag.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'valloric/python-indent'
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 let plugin_paths = ['plugins/fzf']
