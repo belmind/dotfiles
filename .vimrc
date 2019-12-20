@@ -6,6 +6,7 @@ Plug 'https://github.com/rking/ag.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'valloric/python-indent'
 Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
 call plug#end()
 
 let plugin_paths = ['plugins/fzf']
@@ -163,6 +164,9 @@ nnoremap <C-H> <C-W><C-H>
 
 " Enable folding with the spacebar
 nnoremap <space> za
+
+" Grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif

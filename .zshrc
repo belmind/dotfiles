@@ -95,11 +95,7 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias b="cd ~/Projects/backend/repo"
-alias f="cd ~/Projects/frontend/repo"
-alias p="cd ~/Projects"
+alias zshrc="nvim ~/.zshrc"
 
 function code {
     if [[ $# = 0 ]]
