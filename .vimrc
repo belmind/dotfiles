@@ -128,6 +128,9 @@ au BufNewFile,BufRead *.py
     \|set autoindent
     \|set fileformat=unix
 
+" Put all temp files `file.txt~` in the same directory
+set backup
+set dir=~/tmp
 
 " Flags extraneous whitespace
 " au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
