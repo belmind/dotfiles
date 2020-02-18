@@ -7,14 +7,11 @@ Plug 'flazz/vim-colorschemes'
 Plug 'valloric/python-indent'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
+Plug 'Townk/vim-autoclose'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
 let plugin_paths = ['plugins/fzf']
-
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
 
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
@@ -33,9 +30,6 @@ set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
-
-" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
-" let &guioptions = substitute(&guioptions, "t", "", "g")
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -160,7 +154,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Colorscheme 
-:colorscheme space-vim-dark
+:colorscheme gruvbox
 
 " Enable folding with the spacebar
 nnoremap <space> za
