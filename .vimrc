@@ -9,6 +9,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Townk/vim-autoclose'
 Plug 'itchyny/lightline.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 let plugin_paths = ['plugins/fzf']
@@ -129,11 +130,38 @@ au BufNewFile,BufRead *.py
     \|set fileformat=unix
 
 " Put all temp files `file.txt~` in the same directory
-set backupdir=~/vimtmp//,.
-set directory=~/vimtmp//,.
+" set backupdir=~/vimtmp//,.
+" set directory=~/vimtmp//,.
+set noswapfile
 
-" Flags extraneous whitespace
-" au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+" TextEdit might fail if hidden is not set.
+set hidden
+
+" Give more space for displaying messages.
+set cmdheight=2
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" " delays and poor user experience.
+set updatetime=300
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+set signcolumn=yes
+
+" Use tab for trigger completion with characters ahead and navigate.
+inoremap <silent><expr> <TAB>
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " CTRL + n Opens NERDTree
 nnoremap <C-n> :NERDTreeToggle<CR>
