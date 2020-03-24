@@ -163,6 +163,10 @@ endfunction
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
+" turn hybrid line numbers on
+:set number relativenumber
+:set nu rnu
+
 " CTRL + n Opens NERDTree
 nnoremap <C-n> :NERDTreeToggle<CR>
 
