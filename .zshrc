@@ -96,6 +96,8 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 alias zshrc="nvim ~/.zshrc"
+alias ngrok="~/ngrok"
+alias delete_pyc="b && find . -name *.pyc -delete"
 
 function code {
     if [[ $# = 0 ]]
@@ -132,8 +134,11 @@ fi
 
 [ $RANGER_LEVEL ] && ranger_prompt="(ranger)" #
 
+
 # Set up the prompt template
 PROMPT=$'\n'"%{$fg[blue]%}%B%~%{$reset_color%} \$(git_prompt_info)"
 [ $SSH_CLIENT ] && PROMPT="$PROMPT [%n@%m]" # only append prompt with host over ssh
 # PROMPT="$PROMPT"$'\n'"$ranger_prompt%(?.%F{green}.%F{red})>%f "
 PROMPT="$PROMPT"$'\n$(prepend_prompt) '"%(?.%F{green}.%F{red})❯%f "
+
+export GPG_TTY=$(tty)
