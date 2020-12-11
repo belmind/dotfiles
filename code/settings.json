@@ -58,6 +58,7 @@
         "**/*.bundle.js": true,
         "**/*.pyc": true
     },
+    "editor.lineNumbers": "relative",
     "vsicons.dontShowNewVersionMessage": true,
     "editor.cursorStyle": "block",
     "editor.cursorBlinking": "phase",
