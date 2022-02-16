@@ -1,99 +1,125 @@
 {
-    "workbench.startupEditor": "newUntitledFile",
-    "workbench.colorTheme": "Monokai Pro",
-    "editor.fontSize": 11,
-    "[python]": {
-
-    },
-    "files.trimTrailingWhitespace": true,
-    "editor.hover.delay": 200,
-    "editor.mouseWheelScrollSensitivity": 1,
-    "editor.rulers": [
-        72,
-        80
-    ],
-    "stylelint.enable": true,
-    "stylelint.config": {
-        "extends": "CHANGE" 
-    },
-    "editor.smoothScrolling": true,
-    "workbench.iconTheme": "vscode-icons",
-    "workbench.fontAliasing": "antialiased",
-    "window.zoomLevel": 0,
-    "workbench.activityBar.visible": false,
-    "workbench.editor.highlightModifiedTabs": true,
-    // "eslint.autoFixOnSave": true,
-    "eslint.enable": true,
-    "eslint.nodePath": "CHANGE",
-    "eslint.options": {
-        "configFile": "CHANGE",
-        "ignorePath": "CHANGE",
-        "rules": {
-            // "max-len": ["error", {"code": 100}]
-        }
-    },
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": false,
-    // "[javascript]": {
-    //     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    //     "editor.formatOnSave": true
-    // },
-    // "[javascriptreact]": {
-    //     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    //     "editor.formatOnSave": true
-    // },
-    "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/CVS": true,
-        "**/.DS_Store": true,
-        "core/src/libs/**": true,
-        "commander/src/libs/**": true,
-        "built/**": true,
-        "shared/vendor/**": true,
-        "commander/public/**": true,
-        "core/public/**": true,
-        "**/*.css": true,
-        "**/*.bundle.js": true,
-        "**/*.pyc": true
-    },
-    "editor.lineNumbers": "relative",
-    "vsicons.dontShowNewVersionMessage": true,
-    "editor.cursorStyle": "block",
-    "editor.cursorBlinking": "phase",
-    "editor.renderWhitespace": "selection",
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-    },
-    "workbench.statusBar.visible": true,
-    "vim.vimrc.enable": true,
-    "workbench.colorCustomizations": {
-        "activityBarBadge.background": "#00BCD4",
-        "activityBar.activeBorder": "#00BCD4",
-        "list.activeSelectionForeground": "#00BCD4",
-        "list.inactiveSelectionForeground": "#00BCD4",
-        "list.highlightForeground": "#00BCD4",
-        "scrollbarSlider.activeBackground": "#00BCD450",
-        "editorSuggestWidget.highlightForeground": "#00BCD4",
-        "textLink.foreground": "#00BCD4",
-        "progressBar.background": "#00BCD4",
-        "pickerGroup.foreground": "#00BCD4",
-        "tab.activeBorder": "#00BCD4",
-        "notificationLink.foreground": "#00BCD4",
-        "editorWidget.resizeBorder": "#00BCD4",
-        "editorWidget.border": "#00BCD4",
-        "settings.modifiedItemIndicator": "#00BCD4",
-        "settings.headerForeground": "#00BCD4",
-        "panelTitle.activeBorder": "#00BCD4",
-        "breadcrumb.activeSelectionForeground": "#00BCD4",
-        "menu.selectionForeground": "#00BCD4",
-        "menubar.selectionForeground": "#00BCD4",
-        "editor.findMatchBorder": "#00BCD4",
-        "selection.background": "#00BCD440"
-    },
-    "materialTheme.accent": "Cyan",
-    "timeline.excludeSources": [
-        "git-history"
-    ]
+  "workbench.startupEditor": "newUntitledFile",
+  "files.trimTrailingWhitespace": true,
+  "editor.hover.delay": 200,
+  "editor.mouseWheelScrollSensitivity": 1,
+  "editor.rulers": [72, 80],
+  "stylelint.enable": true,
+  "stylelint.config": {
+    "extends": "./tools/.stylelintrc.yml"
+  },
+  "editor.smoothScrolling": true,
+  "workbench.iconTheme": "vscode-icons-mac",
+  "workbench.fontAliasing": "antialiased",
+  "workbench.activityBar.visible": true,
+  "workbench.editor.highlightModifiedTabs": true,
+  "eslint.nodePath": "./tools/node_modules",
+  "eslint.options": {
+    "configFile": "./tools/.eslintrc.yml",
+    "ignorePath": "./tools/.eslintignore"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/*.bundle.js": true,
+    "**/*.pyc": true,
+    "**/CVS": true,
+    "built/**": true,
+    "commander/public/**": true,
+    "commander/src/libs/**": true,
+    "core/public/**": true,
+    "core/src/libs/**": true,
+    "shared/vendor/**": true,
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "editor.lineNumbers": "on",
+  "vsicons.dontShowNewVersionMessage": true,
+  "editor.cursorStyle": "block",
+  "editor.cursorBlinking": "smooth",
+  "editor.renderWhitespace": "selection",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+    // "source.organizeImports": true
+  },
+  "workbench.statusBar.visible": true,
+  "vim.vimrc.enable": true,
+  "workbench.colorCustomizations": {
+    "activityBarBadge.background": "#00BCD4",
+    "activityBar.activeBorder": "#00BCD4",
+    "list.activeSelectionForeground": "#00BCD4",
+    "list.inactiveSelectionForeground": "#00BCD4",
+    "list.highlightForeground": "#00BCD4",
+    "scrollbarSlider.activeBackground": "#00BCD450",
+    "editorSuggestWidget.highlightForeground": "#00BCD4",
+    "textLink.foreground": "#00BCD4",
+    "progressBar.background": "#00BCD4",
+    "pickerGroup.foreground": "#00BCD4",
+    "tab.activeBorder": "#00BCD4",
+    "notificationLink.foreground": "#00BCD4",
+    "editorWidget.resizeBorder": "#00BCD4",
+    "editorWidget.border": "#00BCD4",
+    "settings.modifiedItemIndicator": "#00BCD4",
+    "settings.headerForeground": "#00BCD4",
+    "panelTitle.activeBorder": "#00BCD4",
+    "breadcrumb.activeSelectionForeground": "#00BCD4",
+    "menu.selectionForeground": "#00BCD4",
+    "menubar.selectionForeground": "#00BCD4",
+    "editor.findMatchBorder": "#00BCD4",
+    "selection.background": "#00BCD440",
+    "statusBar.background": "#005f5f",
+    "statusBar.noFolderBackground": "#005f5f",
+    "statusBar.debuggingBackground": "#005f5f"
+  },
+  "timeline.excludeSources": ["git-history"],
+  "python.linting.flake8Enabled": true,
+  "python.sortImports.path": "/Library/Frameworks/Python.framework/Versions/2.7/bin/isort",
+  "vim.enableNeovim": true,
+  "vim.statusBarColorControl": true,
+  "vim.statusBarColors.commandlineinprogress": "#007acc",
+  "vim.statusBarColors.insert": "#5f0000",
+  "vim.statusBarColors.replace": "#00000",
+  "vim.statusBarColors.normal": "#242424",
+  "vim.statusBarColors.visual": "#5f00af",
+  "vim.statusBarColors.visualblock": "#86592d",
+  "vim.statusBarColors.visualline": "#005f5f",
+  "eslint.format.enable": true,
+  "eslint.alwaysShowStatus": true,
+  "workbench.colorTheme": "Panda Syntax",
+  "launch": {
+    "configurations": [],
+    "compounds": []
+  },
+  "editor.suggestSelection": "first",
+  "python.languageServer": "Pylance",
+  "workbench.editor.wrapTabs": true,
+  "liveshare.authenticationProvider": "GitHub",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "editor.tabSize": 4,
+  "workbench.editor.showTabs": true,
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "off",
+  "editor.fontFamily": "Menlo, Monaco, monospace, 'Courier New'",
+  "editor.letterSpacing": 0.05,
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "diffEditor.renderSideBySide": false,
+  "html.format.endWithNewline": true,
+  "editor.bracketPairColorization.enabled": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.fontWeight": "bold",
+  "editor.cursorSmoothCaretAnimation": true,
+  "workbench.list.smoothScrolling": true,
+  "workbench.productIconTheme": "el-vsc-v1-icons",
+  "editor.minimap.enabled": false
 }
