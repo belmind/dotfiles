@@ -1,15 +1,14 @@
 " Plugins
-call plug#begin('~/.local/share/nvim/plugged')
+call plug#begin()
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'https://github.com/rking/ag.vim'
 Plug 'flazz/vim-colorschemes'
-Plug 'valloric/python-indent'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Townk/vim-autoclose'
 Plug 'itchyny/lightline.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 let plugin_paths = ['plugins/fzf']
@@ -17,6 +16,10 @@ let plugin_paths = ['plugins/fzf']
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+
+" Encoding
+set encoding=UTF-8
+
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -97,9 +100,8 @@ if has('langmap') && exists('+langnoremap')
   " compatible).
   set langnoremap
 endif
+
 set number
-execute pathogen#infect()
-call pathogen#helptags()
 
 " The Silver Searcher
 if executable('ag')
@@ -160,9 +162,6 @@ function! s:check_back_space() abort
     return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
 " turn hybrid line numbers on
 :set number relativenumber
 :set nu rnu
@@ -189,7 +188,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Colorscheme 
-:colorscheme gruvbox
+:colorscheme mango
 
 " Enable folding with the spacebar
 nnoremap <space> za
