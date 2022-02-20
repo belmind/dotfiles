@@ -1,0 +1,10 @@
+[user]
+	email = belmin.der@gmail.com
+	name = Belmin Dervisevic
+	signingkey = INSERT_KEY 
+[core]
+	editor = nvim
+[commit]
+	gpgsign = true
+[alias]
+	plog = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
