@@ -44,6 +44,23 @@ function code {
     fi
 }
 
+# History file
+export HISTSIZE=10000000
+export SAVEHIST=10000000
+export HISTFILE="$HOME/.zhistory"
+
+setopt EXTENDED_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_BEEP
+
+unsetopt SHARE_HISTORY
+setopt INC_APPEND_HISTORY
+
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
