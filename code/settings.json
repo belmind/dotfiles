@@ -10,8 +10,6 @@
   },
   "editor.smoothScrolling": true,
   "workbench.iconTheme": "vscode-icons-mac",
-  "workbench.fontAliasing": "antialiased",
-  "workbench.activityBar.visible": true,
   "workbench.editor.highlightModifiedTabs": true,
   "eslint.nodePath": "./tools/node_modules",
   "eslint.options": {
@@ -21,10 +19,18 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "files.exclude": {
+    ".venv-py**": true,
+    ".venv-py2/**": true,
+    "**/.classpath": true,
     "**/.DS_Store": true,
+    "**/.factorypath": true,
     "**/.git": true,
     "**/.hg": true,
+    "**/.project": true,
+    "**/.settings": true,
     "**/.svn": true,
+    "**/.venv": true,
+    "**/.venv-py2": true,
     "**/*.bundle.js": true,
     "**/*.pyc": true,
     "**/CVS": true,
@@ -33,22 +39,17 @@
     "commander/src/libs/**": true,
     "core/public/**": true,
     "core/src/libs/**": true,
-    "shared/vendor/**": true,
-    "**/.classpath": true,
-    "**/.project": true,
-    "**/.settings": true,
-    "**/.factorypath": true
+    "node_modules": true,
+    "shared/vendor/**": true
   },
-  "editor.lineNumbers": "on",
+  "editor.lineNumbers": "relative",
   "vsicons.dontShowNewVersionMessage": true,
   "editor.cursorStyle": "block",
   "editor.cursorBlinking": "smooth",
   "editor.renderWhitespace": "selection",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
-    // "source.organizeImports": true
   },
-  "workbench.statusBar.visible": true,
   "vim.vimrc.enable": true,
   "workbench.colorCustomizations": {
     "activityBarBadge.background": "#00BCD4",
@@ -79,7 +80,13 @@
   },
   "timeline.excludeSources": ["git-history"],
   "python.linting.flake8Enabled": true,
-  "python.sortImports.path": "/Library/Frameworks/Python.framework/Versions/2.7/bin/isort",
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "BLACK_PATH",
+  "python.formatting.blackArgs": [
+    "-l100",
+    "-tpy27",
+    "--exclude=EXCLUDE_PATH"
+  ],
   "vim.enableNeovim": true,
   "vim.statusBarColorControl": true,
   "vim.statusBarColors.commandlineinprogress": "#007acc",
@@ -91,7 +98,6 @@
   "vim.statusBarColors.visualline": "#005f5f",
   "eslint.format.enable": true,
   "eslint.alwaysShowStatus": true,
-  "workbench.colorTheme": "Panda Syntax",
   "launch": {
     "configurations": [],
     "compounds": []
@@ -99,7 +105,6 @@
   "editor.suggestSelection": "first",
   "python.languageServer": "Pylance",
   "workbench.editor.wrapTabs": true,
-  "liveshare.authenticationProvider": "GitHub",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
   },
@@ -121,5 +126,17 @@
   "editor.cursorSmoothCaretAnimation": true,
   "workbench.list.smoothScrolling": true,
   "workbench.productIconTheme": "el-vsc-v1-icons",
-  "editor.minimap.enabled": false
+  "editor.minimap.enabled": false,
+  "workbench.fontAliasing": "antialiased",
+  "workbench.colorTheme": "Panda Syntax",
+  "search.exclude": {
+    ".venv-py2": true,
+    ".venv-py3": true
+  },
+  "window.commandCenter": true,
+  "eslint.trace.server": "off",
+  "editor.formatOnPaste": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  }
 }
