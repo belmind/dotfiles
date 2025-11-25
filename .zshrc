@@ -1,14 +1,13 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Current theme is pure by Sindre
-ZSH_THEME="pure"
-fpath+=$HOME/.zsh/pure
-autoload -U promptinit; promptinit
-prompt pure
+ZSH_THEME="lambda-gitster"
+# fpath+=$HOME/.zsh/pure
+# autoload -U promptinit; promptinit
+# prompt pure
 
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions)
+plugins=(git zsh-fzf-history-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -20,14 +19,12 @@ else
 fi
 
 # Navigation Aliases
-# ----- REMOVED FROM GITHUB -----
+# alias b="cd ~/backend/"
 
 # Configuration Aliases
 alias zshrc="nvim ~/.zshrc"
 alias vimrc="nvim ~/.vimrc"
 
-# Git Aliases
-alias gcs="git checkout develop"
 
 # Autocomplete
 zstyle ':autocomplete:*' default-context history-incremental-search-backward
@@ -70,5 +67,22 @@ export NVM_DIR="$HOME/.nvm"
 export GPG_TTY=$(tty)
 gpgconf --launch gpg-agent
 
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[[ "$TERM" == "xterm-kitty" ]] && alias ssh="kitty +kitten ssh"
+
+# For macOS Terminal to auto-add ssh keys and redirect sdtout to /dev/null
+eval "$(ssh-add --apple-use-keychain >/dev/null 2>&1)"
+
+if [[ $#h -gt 0 ]]; then
+zstyle :completion:*:ssh:* hosts \$h
+zstyle :completion:*:slogin:* hosts \$h
+fi
+
+fpath=($fpath "/Users/bdervisevi/.zfunctions")
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+
+. "$HOME/.local/bin/env"
